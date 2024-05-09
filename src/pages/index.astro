@@ -5,15 +5,20 @@ import Chip from "../components/chip.astro";
 // Put all your links here
 const links: Link[] = [
   {
-    desc: "Example Project", // The text that will be rendered
-    link: "example.com", // The link
-    icon: "fa-solid fa-home", // An icon from Font Awesome: https://fontawesome.com/search?o=r&m=free
+    desc: "My personal blog",
+    link: "paragraph.xyz/@d4rm_",
+    icon: "fa-solid fa-square-rss",
   },
   {
-    desc: "Cool Project",
-    link: "example.com",
-    icon: "fa-solid fa-store",
+    desc: "El Burro Podcast (2023)", // The text that will be rendered
+    link: "pod.link/1705752091", // The link
+    icon: "fa-solid fa-podcast", // An icon from Font Awesome: https://fontawesome.com/search?o=r&m=free
+  },{
+    desc: "Punto de interés (2021)", // The text that will be rendered
+    link: "pod.link/puntodeinteres", // The link
+    icon: "fa-solid fa-podcast", // An icon from Font Awesome: https://fontawesome.com/search?o=r&m=free
   },
+  
 ];
 ---
 
@@ -30,17 +35,17 @@ const links: Link[] = [
       referrerpolicy='no-referrer'
     />
     <meta name='generator' content={Astro.generator} />
-    <meta name='description' content='Useful links of Neville Brem' />
-    <meta name='author' content='Neville Brem' />
-    <meta property='og:title' content='Neville Brem' />
-    <meta property='og:image' content='favicon.png' />
-    <meta property='og:description' content='Linktree of Neville Brem' />
-    <meta property='twitter:description' content='Linktree of Neville Brem' />
-    <meta property='twitter:title' content='Neville Brem' />
-    <meta property='twitter:image' content='favicon.png' />
+    <meta name='description' content='Gordo compu full-time. Student of systems engineering. Blockchain, cryptography, distributed systems, cybersecurity and performant software.' />
+    <meta name='author' content='d4rm' />
+    <meta property='og:title' content='dantesito.eth 🇦🇷 (arg/acc)' />
+    <meta property='og:image' content='avatar.png' />
+    <meta property='og:description' content='dantesito.eth 🇦🇷 (arg/acc)' />
+    <meta property='twitter:description' content='Gordo compu full-time. Student of systems engineering. Blockchain, cryptography, distributed systems, cybersecurity and performant software.' />
+    <meta property='twitter:title' content='dantesito.eth 🇦🇷 (arg/acc)' />
+    <meta property='twitter:image' content='avatar.png' />
     <meta name='twitter:card' content='summary' />
     <meta name='twitter:site' content='@BremNeville' />
-    <title>Links of Neville Brem</title>
+    <title>dantesito.eth 🇦🇷 (arg/acc)</title>
     <style>
       @font-face {
         font-family: Geist;
@@ -53,7 +58,7 @@ const links: Link[] = [
     class='bg-[#1e1e1e] flex justify-center items-center w-screen h-screen font-[Geist] text-white'
   >
     <main class='w-[80%] flex flex-col gap-8'>
-      <h1 class='md:text-6xl text-4xl font-black text-center'>Your Name</h1>
+      <h1 class='md:text-6xl text-4xl font-black text-center'>dantesito.eth 🇦🇷 (arg/acc)</h1>
       <div class='grid justify-center gap-4'>
         {
           links.map(({ desc, link, icon }) => {
@@ -63,11 +68,15 @@ const links: Link[] = [
       </div>
       <div class='flex justify-center gap-8'>
         <!-- Put some social links who have a definitive icon here: -->
-        <Chip link='youtube.com/' icon='fa-brands fa-youtube' />
-        <Chip link='github.com/' icon='fa-brands fa-github' />
-        <Chip link='x.com/' icon='fa-brands fa-x-twitter' />
+        
+        <Chip link='github.com/d4rm5' icon='fa-brands fa-github' />
+        <Chip link='x.com/d4rm_' icon='fa-brands fa-x-twitter' />
+        <Chip link='tiktok.com/@d4rm_' icon='fa-brands fa-tiktok' />
+        <Chip link='twitch.com/d4rm_' icon='fa-brands fa-twitch' />
+        <Chip link='youtube.com/@d4rm_' icon='fa-brands fa-youtube' />
+        <Chip link='pgp' icon='fa-brands fa-keybase' />
       </div>
-      <p class='text-center mx-auto'>Some additional text, like your email</p>
+      <p class='text-center mx-auto'>Hosted with 💘 in IPFS through fleek.xyz</p>
     </main>
   </body>
 </html>
