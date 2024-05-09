@@ -60,6 +60,9 @@ const links: Link[] = [
   >
     <main class='w-[80%] flex flex-col gap-8'>
       <h1 class='md:text-6xl text-4xl font-black text-center'>dantesito.eth 🇦🇷 (arg/acc)</h1>
+      <p class='text-center mx-auto'>
+        Gordo compu full-time. Student of systems engineering. Blockchain, cryptography, distributed systems, cybersecurity and performant software.
+      </p>
       <div class='grid justify-center gap-4'>
         {
           links.map(({ desc, link, icon }) => {
@@ -67,16 +70,19 @@ const links: Link[] = [
           })
         }
       </div>
-      <div class='flex justify-center gap-8'>
-        <!-- Put some social links who have a definitive icon here: -->
-        
+      <div class='flex flex-col gap-3'>     
+        <div class='flex justify-center gap-8'>  
         <Chip link='github.com/d4rm5' icon='fa-brands fa-github' />
         <Chip link='x.com/d4rm_' icon='fa-brands fa-x-twitter' />
         <FarcasterChip link="warpcast.com/d4rm" />
-        <Chip link='tiktok.com/@d4rm_' icon='fa-brands fa-tiktok' />
+        <Chip link='tiktok.com/@d4rm_' icon='fa-brands fa-tiktok' /> 
+
+      </div> 
+        <div class='flex justify-center gap-8'>
         <Chip link='twitch.com/d4rm_' icon='fa-brands fa-twitch' />
         <Chip link='youtube.com/@d4rm_' icon='fa-brands fa-youtube' /> 
-        <Chip link='keybase.io/d4rm_/pgp_keys.asc?fingerprint=0acda3ab3d0ce6bfde138f5adf27a082e78df483' icon='fa-solid fa-key' />   
+        <Chip link='keybase.io/d4rm_/pgp_keys.asc?fingerprint=0acda3ab3d0ce6bfde138f5adf27a082e78df483' icon='fa-solid fa-key' /> 
+      </div>  
       </div>
       <p class='text-center mx-auto'>Hosted with 💘 in IPFS through fleek.xyz - hello@d4rm.xyz</p>
     </main>
