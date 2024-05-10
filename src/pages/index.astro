@@ -2,6 +2,8 @@
 import Card from "../components/card.astro";
 import Chip from "../components/chip.astro";
 import FarcasterChip from "../components/FarcasterChip.astro";
+import KickChip from "../components/KickChip.astro";
+
 
 // Put all your links here
 const links: Link[] = [
@@ -9,6 +11,16 @@ const links: Link[] = [
     desc: "My personal blog",
     link: "paragraph.xyz/@d4rm_",
     icon: "fa-solid fa-square-rss",
+  },
+  {
+    desc: "Libly.xyz (freezed)",
+    link: "libly.xyz",
+    icon: "fa-solid fa-book",
+  },
+  {
+    desc: "Libly credentials",
+    link: "x.com/d4rm_/status/1722034025190023404",
+    icon: "fa-solid fa-id-card",
   },
   {
     desc: "El Burro Podcast (2023)", // The text that will be rendered
@@ -56,10 +68,10 @@ const links: Link[] = [
     </style>
   </head>
   <body
-    class='bg-[#1e1e1e] flex justify-center items-center w-screen h-screen font-[Geist] text-white'
+    class='bg-[#1e1e1e] flex justify-center items-center w-screen font-[Geist] text-white'
   >
     <main class='w-[80%] flex flex-col gap-8'>
-      <h1 class='md:text-6xl text-4xl font-black text-center'>dantesito.eth 🇦🇷 (arg/acc)</h1>
+      <h1 class='mt-8 md:text-6xl text-4xl font-black text-center'>dantesito.eth 🇦🇷 (arg/acc)</h1>
       <p class='text-center mx-auto'>
         Gordo compu full-time. Student of systems engineering. Blockchain, cryptography, distributed systems, cybersecurity and performant software.
       </p>
@@ -75,16 +87,18 @@ const links: Link[] = [
         <Chip link='github.com/d4rm5' icon='fa-brands fa-github' />
         <Chip link='x.com/d4rm_' icon='fa-brands fa-x-twitter' />
         <FarcasterChip link="warpcast.com/d4rm" />
-        <Chip link='tiktok.com/@d4rm_' icon='fa-brands fa-tiktok' /> 
+        <Chip link='keybase.io/d4rm_/pgp_keys.asc?fingerprint=0acda3ab3d0ce6bfde138f5adf27a082e78df483' icon='fa-solid fa-key' /> 
+
 
       </div> 
         <div class='flex justify-center gap-8'>
+        <Chip link='tiktok.com/@d4rm_' icon='fa-brands fa-tiktok' /> 
         <Chip link='twitch.com/d4rm_' icon='fa-brands fa-twitch' />
+        <KickChip link="kick.com/d4rm" />
         <Chip link='youtube.com/@d4rm_' icon='fa-brands fa-youtube' /> 
-        <Chip link='keybase.io/d4rm_/pgp_keys.asc?fingerprint=0acda3ab3d0ce6bfde138f5adf27a082e78df483' icon='fa-solid fa-key' /> 
       </div>  
       </div>
-      <p class='text-center mx-auto'>Hosted with 💘 in IPFS through fleek.xyz - hello@d4rm.xyz</p>
+      <p class='mb-8 text-center mx-auto'>Hosted with 💘 in IPFS through fleek.xyz - hello@d4rm.xyz</p>
     </main>
   </body>
 </html>
