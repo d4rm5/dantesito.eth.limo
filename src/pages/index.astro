@@ -1,37 +1,62 @@
 ---
-import Card from "../components/card.astro";
-import Chip from "../components/chip.astro";
-import FarcasterChip from "../components/FarcasterChip.astro";
-import KickChip from "../components/KickChip.astro";
-
+import '@fontsource-variable/inconsolata';
 
 // Put all your links here
-const links: Link[] = [
+const socials = [
   {
-    desc: "My personal blog",
-    link: "paragraph.xyz/@d4rm_",
-    icon: "fa-solid fa-square-rss",
+    name: "X",
+    url: "https://x.com/d4rm_",
   },
   {
-    desc: "Libly.xyz (freezed)",
-    link: "libly.xyz",
-    icon: "fa-solid fa-book",
+    name: "Linkedin",
+    url: "https://linkedin.com/in/dantemartinez5"
   },
   {
-    desc: "Libly credentials",
-    link: "x.com/d4rm_/status/1722034025190023404",
-    icon: "fa-solid fa-id-card",
+    name: "Email",
+    url: "mailto:hello@dantesito.com"
   },
   {
-    desc: "El Burro Podcast (2023)", // The text that will be rendered
-    link: "pod.link/1705752091", // The link
-    icon: "fa-solid fa-podcast", // An icon from Font Awesome: https://fontawesome.com/search?o=r&m=free
-  },{
-    desc: "Punto de interés (2021)", // The text that will be rendered
-    link: "pod.link/puntodeinteres", // The link
-    icon: "fa-solid fa-podcast", // An icon from Font Awesome: https://fontawesome.com/search?o=r&m=free
+    name: "Warpcast",
+    url: "https://warpcast.com/d4rm",
   },
+  {
+    name: "GitHub",
+    url: "https://github.com/d4rm5",
+  },
+  {
+    name: "Telegram",
+    url: "https://t.me/d4rm5",
+  },
+  {
+    name: "My blog",
+    url: "https://paragraph.xyz/@d4rm_",
+  },
+];
 
+const projects = [
+  {
+    name: "Proof of X",
+    url: "https://pox.me",
+    description:
+      "Open source web3 protocol focused on internet identity and privacy. I contributed to developing the web3 software and maintaining the community. Worked with Next.js, Tailwind, and front-end smart contracts integrations.",
+  },
+  {
+    name: "Library digital credential",
+    url: "https://x.com/d4rm_/status/1722034025190023404",
+    description:
+      "Open source digital credential software created for my school’s library, built with Expo, React Native, Go, and MySQL. It was my final project for high school.",
+  },
+  {
+    name: "El Burro Podcast",
+    url: "https://youtube.com/@realburropodcast",
+    description: "Podcast that I co-created, hosted, and co-produced in 2023.",
+  },
+  {
+    name: "Technical high school catalog",
+    url: "https://github.com/catalogo-inet/catalogo-inet-front",
+    description:
+      "A map and catalog of all the technical secondary schools in Argentina, which won a contest organized by the INET (National Institute of Technological Education), where many schools from the country participated.",
+  },
 ];
 ---
 
@@ -45,7 +70,6 @@ const links: Link[] = [
       href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
       integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=='
       crossorigin='anonymous'
-      referrerpolicy='no-referrer'
     />
     <meta name='generator' content={Astro.generator} />
     <meta name='description' content='Gordo compu full-time. Student of systems engineering. Blockchain, cryptography, distributed systems, cybersecurity and performant software.' />
@@ -60,42 +84,49 @@ const links: Link[] = [
     <meta name='twitter:site' content='@BremNeville' />
     <title>dantesito.eth 🇦🇷 (arg/acc)</title>
     <style>
-      @font-face {
-        font-family: Geist;
-        src: url(/Geist.ttf);
+      main {
+        font-family: 'Inconsolata Variable', monospace;
         font-display: swap;
       }
     </style>
   </head>
   <body
-    class='bg-[#1e1e1e] flex justify-center items-center w-screen font-[Geist] text-white'
+    class='bg-[#1e1e1e] flex justify-center items-center text-white p-5'
   >
-    <main class='w-[80%] flex flex-col gap-8'>
-      <h1 class='mt-8 md:text-6xl text-4xl font-black text-center'>dantesito.eth 🇦🇷 (arg/acc)</h1>
-      <p class='text-center mx-auto'>
-        Gordo compu full-time. Student of systems engineering. Blockchain, cryptography, distributed systems, cybersecurity and performant software.
+    <main class='w-[60%] mt-1'>
+      <h1 class="text-4xl font-bold mb-5">Hi, Dantesito here! 👋🏻</h1>{" "}
+      <p class="text-lg mb-4">
+        I&#39;m Dante, aka dantesito or d4rm. 🤠 <br />
+        I&#39;m a systems engineering student from Argentina and a passionate enthusiast about blockchain, Ethereum, cryptography, and
+        computers in general. 🧑‍💻
       </p>
-      <div class='grid justify-center gap-4'>
-        {
-          links.map(({ desc, link, icon }) => {
-            return <Card {desc} {link} {icon} />;
-          })
-        }
-      </div>
-      <div class='flex flex-col gap-3'>
-        <div class='flex justify-center gap-8'>
-        <Chip link='github.com/d4rm5' icon='fa-brands fa-github' />
-        <Chip link='x.com/d4rm_' icon='fa-brands fa-x-twitter' />
-        <FarcasterChip link="warpcast.com/d4rm" />
-        <Chip link='mastodon.social/@d4rm_' icon='fa-brands fa-mastodon' />
-        <Chip link='keybase.io/d4rm_/pgp_keys.asc?fingerprint=0acda3ab3d0ce6bfde138f5adf27a082e78df483' icon='fa-solid fa-key' />
-      </div>
-        <div class='flex justify-center gap-8'>
-        <Chip link='tiktok.com/@d4rm_' icon='fa-brands fa-tiktok' />
-        <Chip link='twitch.com/d4rm_' icon='fa-brands fa-twitch' />
-        <KickChip link="kick.com/d4rm" />
-        <Chip link='youtube.com/@d4rm_' icon='fa-brands fa-youtube' />
-      </div>
+      <p class="text-lg mb-8">
+        Currently, I&#39;m learning about smart contracts, cryptography, cybersecurity, and related topics. In the
+        past, I learned web and mobile development with a focus on front-end technologies like TypeScript, React,
+        React Native, and Next.js. 🪷
+      </p>
+      <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-900 dark:text-gray-100">Find me on:</h2>
+      <ul class="flex justify-center space-x-4 text-lg text-blue-600 dark:text-blue-400">
+        {socials.map(social => (
+          <li id={social.name}>
+            <a href={social.url} target="_blank" rel="noopener noreferrer" class="hover:underline">
+              {social.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <h2 class="text-2xl font-semibold mt-8 mb-4">Past projects / contributions ↓</h2>
+      <ul class="list-none text-left space-y-4">
+        {projects.map(project => (
+          <li id={project.name}>
+            <a href={project.url} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">
+              {project.name}
+            </a>
+            : {project.description}
+          </li>
+        ))}
+      </ul>
+    </div>
       </div>
       <p class='mb-8 text-center mx-auto'>Hosted with 💘 in IPFS through fleek.xyz</p>
     </main>
