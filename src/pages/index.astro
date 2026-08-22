@@ -17,6 +17,10 @@ import {
 } from '../data/profile';
 import AsciiArt from '../components/AsciiArt.astro';
 import { asciiArt } from '../data/asciiArt';
+import { homeJsonLd } from '../data/structuredData';
+
+const site = (Astro.site ?? new URL('https://dantesito.com')).href;
+const jsonLd = homeJsonLd(site);
 ---
 
 <Base
@@ -24,6 +28,7 @@ import { asciiArt } from '../data/asciiArt';
   description={siteDescription}
   ogTitle={displayName}
   includeAgentsAlternate
+  jsonLd={jsonLd}
 >
   <div class='flex min-h-[calc(100vh-4rem)] flex-col justify-center py-8'>
     <nav class='mb-10 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-medium text-blue-600 dark:text-blue-400' aria-label='Site sections'>

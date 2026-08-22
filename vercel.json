@@ -1,0 +1,29 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</sitemap.xml>; rel=\"sitemap\", </llms.txt>; rel=\"alternate\"; type=\"text/plain\", </agents.md>; rel=\"alternate\"; type=\"text/markdown\", </rss.xml>; rel=\"alternate\"; type=\"application/rss+xml\""
+        }
+      ]
+    },
+    {
+      "source": "/(about|contact|shelf)/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</sitemap.xml>; rel=\"sitemap\", </llms.txt>; rel=\"alternate\"; type=\"text/plain\""
+        }
+      ]
+    },
+    {
+      "source": "/(.*).md",
+      "headers": [
+        { "key": "Vary", "value": "Accept, Accept-Encoding" }
+      ]
+    }
+  ]
+}

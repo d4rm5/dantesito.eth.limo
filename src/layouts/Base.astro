@@ -19,6 +19,8 @@ interface Props {
   ogImage?: string;
   /** For `og:type=article` (blog posts). */
   publishedTime?: Date;
+  /** schema.org JSON-LD emitted as <script type="application/ld+json">. See src/data/structuredData.ts. */
+  jsonLd?: Record<string, unknown>;
 }
 
 const {
@@ -30,6 +32,7 @@ const {
   ogType = 'website',
   ogImage: ogImageProp,
   publishedTime,
+  jsonLd,
 } = Astro.props;
 
 const site = Astro.site ?? new URL('https://dantesito.com');
@@ -46,6 +49,8 @@ function absoluteImageUrl(image: string): string {
 const ogImageUrl = absoluteImageUrl(ogImageProp ?? '/og.png');
 const twitterCard = ogType === 'article' ? 'summary_large_image' : 'summary';
 
+// `</script>` inside a JSON string would close the tag early; escape the `<`.
+const jsonLdText = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : null;
 ---
 
 <!DOCTYPE html>
@@ -97,6 +102,10 @@ const twitterCard = ogType === 'article' ? 'summary_large_image' : 'summary';
     <meta name='twitter:title' content={ogTitle} />
     <meta name='twitter:description' content={description} />
     <meta name='twitter:image' content={ogImageUrl} />
+
+    {jsonLdText && (
+      <script type='application/ld+json' is:inline set:html={jsonLdText} />
+    )}
 
     <title>{title}</title>
     <style is:global>

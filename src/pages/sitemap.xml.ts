@@ -26,6 +26,8 @@ export const GET: APIRoute = async (context) => {
     { loc: new URL("/blog/", siteBase).toString(), changefreq: "weekly", priority: 0.8 },
     { loc: new URL("/weeknotes/", siteBase).toString(), changefreq: "weekly", priority: 0.7 },
     { loc: new URL("/shelf/", siteBase).toString(), changefreq: "monthly", priority: 0.6 },
+    { loc: new URL("/about/", siteBase).toString(), changefreq: "yearly", priority: 0.7 },
+    { loc: new URL("/contact/", siteBase).toString(), changefreq: "yearly", priority: 0.7 },
   ];
 
   for (const post of sortedPosts) {

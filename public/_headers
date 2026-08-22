@@ -1,5 +1,10 @@
 # Netlify _headers configuration
 # https://docs.netlify.com/routing/headers/
+#
+# NOTE: the site currently deploys to Vercel, which ignores this file.
+# The live equivalents are in ../vercel.json (Link headers) and
+# ../middleware.ts (Accept negotiation + Vary). Kept in sync in case the
+# deploy target ever moves back to Netlify.
 
 # Link headers for agent discovery (RFC 8288)
 # Homepage

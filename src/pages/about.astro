@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import { aboutDescription, aboutTitle, renderAboutMarkdown } from '../data/pages';
+import { aboutJsonLd } from '../data/structuredData';
+
+const marked = await import('marked');
+const html = String((marked.default ?? marked).parse(renderAboutMarkdown()));
+
+const site = (Astro.site ?? new URL('https://dantesito.com')).href;
+const jsonLd = aboutJsonLd(site, aboutDescription);
+---
+
+<Base
+  title={aboutTitle}
+  ogTitle={aboutTitle}
+  description={aboutDescription}
+  agentMarkdownHref='/about.md'
+  jsonLd={jsonLd}
+>
+  <nav class='mb-10 text-center text-sm text-neutral-500 dark:text-gray-500'>
+    <a href='/' class='hover:text-neutral-800 dark:hover:text-gray-300'>Home</a>
+    <span class='mx-2'>·</span>
+    <a href='/contact/' class='hover:text-neutral-800 dark:hover:text-gray-300'>Contact</a>
+    <span class='mx-2'>·</span>
+    <a href='/blog/' class='hover:text-neutral-800 dark:hover:text-gray-300'>Blog</a>
+    <span class='mx-2'>·</span>
+    <a href='/weeknotes/' class='hover:text-neutral-800 dark:hover:text-gray-300'>Weeknotes</a>
+    <span class='mx-2'>·</span>
+    <a href='/shelf/' class='hover:text-neutral-800 dark:hover:text-gray-300'>Shelf</a>
+  </nav>
+  <article
+    class='prose prose-neutral mx-auto max-w-2xl dark:prose-invert prose-a:text-blue-600 dark:prose-a:text-blue-400'
+    set:html={html}
+  />
+</Base>
